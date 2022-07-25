@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,28 +17,34 @@
         </article>
     </li>
 </template>
-<template></template>
 <body>
 <header>
     <article class="navbar">
         <h1 id="origin-title"></h1>
-        <h2>Bruce0203의 리소스</h2>
+        <h1>Magic Plugin Team</h1>
+        <footer>
+            <h2>Bruce0203의 리소스</h2>
+            <button id="backToPlugins" class="secondary" onclick="backToPlugins()" style="float: right">돌아가기</button>
+        </footer>
     </article>
 </header>
 <div class="grid">
 
     <section>
-        <hgroup>
-        </hgroup>
-        <div id="page-content-wrapper">
-            <div id="plugins">
-                <ul class="list">
-                </ul>
-                <ul>
-                </ul>
+
+        <div class="manage">
             </div>
-            <hr>
-        </div>
+
+            <div id="page">
+                <div id="plugins">
+                    <ul class="list">
+                    </ul>
+                    <ul>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+
     </section>
 
 
@@ -68,11 +74,13 @@
     })
 
     function manageButton(e) {
-        document.querySelector("#page-content-wrapper").style.display = "none"
+        document.querySelector("#page").style.display = "none"
+        document.querySelector(".manage").style.display = "block"
     }
 
     function backToPlugins() {
-        document.querySelector("#page-content-wrapper").style.display = "block"
+        document.querySelector(".manage").style.display = "none"
+        document.querySelector("#page").style.display = "block"
     }
 </script>
 
@@ -85,7 +93,7 @@
     body {
         transform: translateY(-5%);
     }
-    #page-content-wrapper {
+    #page {
         padding-left: 15%;
         padding-right: 15%;
     }
@@ -105,6 +113,13 @@
     .card {
         margin: 5%;
     }
+    .manage {
+        horiz-align: center;
+    }
 
+    #backToPlugins {
+        margin-left: 10%;
+        width: 15%;
+    }
 </style>
 
