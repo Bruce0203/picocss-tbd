@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/pico.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dashboard</title>
+</head>
+<body>
+<div class="grid">
+
+    <section>
+        <hgroup>
+            <div id="header-navbar">
+                <h1>Bruce0203의 리소스</h1>
+            </div>
+        </hgroup>
+        <div id="page-content-wrapper">
+            <div>
+                <ul class="list">
+                </ul>
+                <ul>
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+
+</div>
+
+<footer class="container" style="padding-top: 10%">
+    <small>Made by <a href="https://github.com/Bruce0203">Bruce0203</a> • <a href="https://github.com/MagicPluginTeam">Home page</a></small>
+</footer><!-- ./ Footer -->
+
+
+
+</body>
+
+<style>
+    #header-navbar {
+        overflow:hidden;
+        padding-top: 3.14%;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    #page-content-wrapper {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    li * {
+        list-style-type: none;
+    }
+    ul li {
+        float: left;
+        display: inline-block;
+        width: 100%;
+    }
+    article h1, h2, h3 {
+        padding: 0;
+        margin: 0;
+        line-height: 100%;
+        padding-bottom: 6%;
+    }
+    article {
+        margin: 5%;
+    }
+
+
+
+</style>
+
+<script>
+    let list = document.querySelector(".list")
+    let card = document.querySelector(".card").content
+    const array = [ "EssentialsM", "MiniGamePack" ]
+    array.forEach(e => {
+        card.querySelector(".name").textContent = e
+        let clone = card.cloneNode(true)
+        list.appendChild(clone)
+    })
+</script>
