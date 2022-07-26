@@ -19,13 +19,14 @@
 </template>
 <body>
 <header>
-    <article class="navbar">
-        <h1 id="origin-title"></h1>
+    <article class="navbar" >
         <h1>Magic Plugin Team</h1>
         <footer>
-            <h2>Bruce0203의 리소스</h2>
-            <a onclick="backToPlugins()" href="#" class="secondary"><abbr style="display: inline-block; float: right; width: initial">돌아가기</abbr></a>
-            <a id="sexasdf" onclick="backToPlugins()" href="#" class="secondary"><abbr style="display: inline-block; float: right">asdf</abbr></a>
+            <h2 style="display: inline-block;">Bruce0203의 리소스</h2>
+            <div class="split" style="right: 0; transform: translateX(-50%) translateY(-50%);">
+                <a onclick="backToPlugins()" href="#" class="secondary"><abbr style="display: inline-block; float: right; width: initial; margin: 10px; padding: 20px">돌아가기</abbr></a>
+                <a id="sexasdf" onclick="backToPlugins()" href="#" class="secondary"><abbr style="display: inline-block; float: right; margin: 10px; padding: 20px">asdf</abbr></a>
+            </div>
 <!--            <button id="backToPlugins" class="secondary" onclick="backToPlugins()" style="float: right">돌아가기</button>-->
         </footer>
     </article>
@@ -90,6 +91,7 @@
 
     .navbar {
         margin: 0;
+        padding: 0;
         line-height: 0;
     }
     body {
@@ -117,6 +119,11 @@
     }
     .manage {
         horiz-align: center;
+    }
+
+    .split {
+        display: inline-block;
+        position: fixed
     }
 
 </style>
