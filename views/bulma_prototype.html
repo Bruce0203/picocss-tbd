@@ -5,20 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello</title>
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+/* Purple Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #8e24aa;
+  --primary-hover: #7b1fa2;
+  --primary-focus: rgba(142, 36, 170, 0.125);
+  --primary-inverse: #FFF;
+}
+
+/* Purple Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #8e24aa;
+    --primary-hover: #9c27b0;
+    --primary-focus: rgba(142, 36, 170, 0.25);
+    --primary-inverse: #FFF;
+  }
+}
+
+/* Purple Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme="dark"] {
+  --primary: #8e24aa;
+  --primary-hover: #9c27b0;
+  --primary-focus: rgba(142, 36, 170, 0.25);
+  --primary-inverse: #FFF;
+}
+
+/* Purple (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+}
+
+        .no-dot-ul * { list-style-type: none; }
+        .no-margin-and-padding { margin: 0; padding: 0; }
+        .no-margin-and-padding-to-children * { margin: 0; padding: 0;}
+        .inline-flex { display: inline-flex; }
+        .stick-to-right { right: 0; }
+        .stick-to-right-children * { right: 0; }
+        .clickable-button li { padding-left: 45%; padding-right: 45%; }
+    </style>
 </head>
 <body>
+<div style="height: 100px">
 <navbar>
-    <ul>
-        <li>
+        <img src="../assets/img/logo.png" class="no-margin-and-padding inline-flex" style="max-width: 10.5%; background-color: #8e24aa;">
+        <ul class="
+        no-dot-ul inline-flex 
+        no-margin-and-padding-to-children 
+        no-margin-and-padding
+        clickable-button
+        stick-to-right
+        " style="float: right; box-sizing: border-box; vertical-align: inherit;">
+        <li class="">
             <a>
-                <img src="../assets/img/logo.png" style="display: inline-flex;max-width: 7.5%">
-                <h1 style="display: inline-flex">Magic Plugin Team</h1>
+                <strong class="secondary" style="font-size: 150%; width: 50;">Docs</strong>
             </a>
         </li>
     </ul>
+    <hr class="no-margin-and-padding">
 </navbar>
+</div>
 <div>
     <h2>Hello</h2>
 </div>
+
 </body>
 </html>
+
